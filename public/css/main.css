@@ -1,0 +1,120 @@
+html,body {
+  font-family:  '微軟正黑體' , sans-serif;
+  background: #F2F6FA;
+}
+a{
+  color:black;
+}
+footer {
+  background-color: #F2F6FA !important;
+}
+.topNav {
+  border-top: 5px solid #3498DB;
+}
+.topNav .container {
+  border-bottom: 1px solid #E6EAEE;
+}
+.container .columns {
+  margin: 3rem 0;
+}
+.navbar-menu .navbar-item {
+  padding: 0 2rem;
+}
+
+
+.menu-list li{
+  padding: 5px;
+}
+.navbar-item img {
+  max-height: unset;
+}
+
+/* custom自訂css */
+.postsList{
+  background: #fff;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+}
+.postsList li h4{
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: .8em;
+}
+.postsList li:hover{
+  background: #f9f9f9;
+}
+
+.item{
+  border-bottom: 1px solid #e8e8e8;
+  padding: 20px 20px 20px 20px;
+  position: relative;
+}
+.link{
+  display: block;
+  padding-right: 120px;
+}
+.link .info{
+  display: flex;
+  font-size: 0.8em;
+}
+.link .info div{
+  margin-right: 5px;
+}
+.link .content{
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+.like{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  height: 74px;
+  width: 64px;
+  margin-left: 12px;
+  /* border-color: #e8e8e8; */
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: #fff;
+}
+.like div{
+  line-height: 25px;
+}
+
+
+/* lightbox */
+.lightbox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.7);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+ 
+
+}
+.lightbox-content{
+  box-sizing: border-box;
+  box-shadow: 1px 0 6px 0 rgba(0,0,0,.3);
+  max-width: 1100px;
+  min-width: 0;
+  border-radius: 3px;
+  padding: 20px;
+  background: #f9f9f9;
+  margin: 100px 0 40px;
+  transform: translateZ(0);
+}
+.lightbox-content h4{
+  font-size: 1.5em;
+  line-height: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
