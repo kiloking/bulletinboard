@@ -9,13 +9,13 @@ $(document).ready(function() {
 
   });
 });
-
+import {devcategoriesURL ,devpostsURL} from './apiurl.js';
 $(function(){
   var $svg = $('.like')
   var $postsList = $('.postsList')
   var $body = $('body')
-  var devcategoriesURL = 'http://localhost:3001/api/categories'
-  var devpostsURL = 'http://localhost:3001/api/posts'
+  // var devcategoriesURL = 'http://192.168.1.137:3001/api/categories'
+  // var devpostsURL = 'http://192.168.1.137:3001/api/posts'
 
   async function getPostsData(){
     const response = await fetch(devpostsURL)
@@ -77,7 +77,7 @@ $(function(){
         <div class="link">
           <h4>${title}</h4>
           <div class="content">
-          ${content}
+          ${content.replace(/<\/?[^>]*>/g, '')}
           </div>
           <div class="info">
             <div class="has-text-weight-bold">${author}</div>
@@ -106,6 +106,7 @@ $(function(){
     .then(data => {
       // console.log(data)
       createLightBox(data)
+      patchPageViews(data.views,_id)
     })
     .catch(err => console.log(err))
   }
@@ -116,6 +117,7 @@ $(function(){
     $light.css('display', 'flex')
 
     var $bg = $('<div></div>').addClass('lightboxbg')
+    var $close = $('<div></div>').addClass('close').html('<i class="fas fa-times"></i>')
 
     var lightboxContent =`
       <div class="lightbox-content">
@@ -123,7 +125,7 @@ $(function(){
           <h4>${title}</h4>
           <div class="info">
             <div class="has-text-weight-bold">${author}</div> 
-            <div class="has-text-grey	">${date}</div>
+            <div class="has-text-grey	">${date.substr(0,10)}</div>
             <div class="tag" style="background-color:${cateText.backgroundcolor}; color:${cateText.fontcolor}">${cateText.title}</div>
           </div>
         </div>
@@ -131,12 +133,11 @@ $(function(){
           <div class="mainContent">
             ${content}
           </div>
-
-          
         </div>
       </div>
     `
     $light.append($bg)
+    $light.append($close)
 
     $light.append(lightboxContent)
     $body.append($light)
@@ -144,6 +145,30 @@ $(function(){
 
     $bg.click(e=>{
       $light.remove()
+    })
+    $close.click(e=>{
+      $light.remove()
+    })
+  }
+
+  function patchPageViews(views,_id){
+    var newviews = views+1
+    fetch(devpostsURL+'/'+_id, {
+      method: 'PUT',
+      // headers 加入 json 格式
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      // body 將 json 轉字串送出
+      body: JSON.stringify({
+        views:newviews
+      })
+    }).then((response) => {
+        return response.json(); 
+      }).then((jsonData) => {
+        console.log(jsonData);
+      }).catch((err) => {
+        console.log('錯誤:', err);
     })
   }
 

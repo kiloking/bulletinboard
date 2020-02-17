@@ -4,7 +4,7 @@ const router = express.Router();
 const PostModel = require('../model/PostModel');
 
 router.get('/', (req, res) => {
-  PostModel.find().then(profile => {
+  PostModel.find().sort({_id: -1}).then(profile => {
     if (!profile) {
       return res.status(404).json('没有任何内容');
     }
@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
 
   PostModel.findOneAndUpdate(
     { _id: req.params.id },
-    { $set: profileFields },
+    { $set: postFields },
     { new: true }
   ).then(profile => res.json(profile));
 
@@ -68,9 +68,9 @@ router.put('/:id', (req, res) => {
 
 // delete api/posts/id
 router.delete('/:id', (req, res) => {
-  PostModel.findOneAndRemove({ _id: req.params.id })
+  PostModel.findOneAndDelete({ _id: req.params.id })
     .then(profile => {
-      profile.save().then(profile => res.json(profile));
+      profile.save().then(profile => res.json({message: "deleted successfully!"}));
     })
     .catch(err => res.status(404).json('删除失败!'));
 });

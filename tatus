@@ -1,0 +1,29 @@
+[33mcommit 5f12971e18f08bedb1b2ab521fdf00c5e68b4fc8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: wood <kilokingw@gmail.com>
+Date:   Mon Feb 17 09:57:22 2020 +0800
+
+    刪除本地影片檔
+
+[33mcommit 31abad0ef00a69b696f031f76010783bb256f255[m
+Author: wood <kilokingw@gmail.com>
+Date:   Mon Feb 17 09:56:33 2020 +0800
+
+    前端電視板第一版完成
+
+[33mcommit 5c074b03b5ad8f290ec7e1a2ac0d85de13ce4b36[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: wood <kilokingw@gmail.com>
+Date:   Wed Feb 5 11:00:37 2020 +0800
+
+    前端可以POST文章
+
+[33mcommit b687ce420d4d3dd7fd3409b4ea19b7f1a0f81a23[m
+Author: wood <kilokingw@gmail.com>
+Date:   Tue Feb 4 11:13:45 2020 +0800
+
+    posts categories api完成
+
+[33mcommit 94a1b550a14e150d796a49ff30c3cca827792a70[m
+Author: wood <kilokingw@gmail.com>
+Date:   Wed Jan 22 14:59:39 2020 +0800
+
+    first commit

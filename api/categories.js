@@ -58,7 +58,7 @@ router.put('/:id', (req, res) => {
 
   CategoriesModel.findOneAndUpdate(
     { _id: req.params.id },
-    { $set: profileFields },
+    { $set: postFields },
     { new: true }
   ).then(profile => res.json(profile));
 
@@ -68,7 +68,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   CategoriesModel.findOneAndRemove({ _id: req.params.id })
     .then(profile => {
-      profile.save().then(profile => res.json(profile));
+      profile.save().then(profile => res.json({message: "deleted successfully!"}));
     })
     .catch(err => res.status(404).json('删除失败!'));
 });

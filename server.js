@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 mongoose
   .connect(
     db,
-    { useNewUrlParser: true,useUnifiedTopology: true }
+    { useNewUrlParser: true,useUnifiedTopology: true, useFindAndModify: false }
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
@@ -31,7 +31,7 @@ const categories = require('./api/categories')
 
 
 // 使用route
-// app.use(cors())
+app.use(cors())
 app.use('/api/posts', posts);
 app.use('/api/categories', categories);
 app.use(express.static(path.join(__dirname, 'public')));

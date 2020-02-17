@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <video width="400" controls Autoplay=autoplay>
+    <!-- <source src="./videos/" type="video/mp4"> -->
+  </video>
+  <div id="wrapper">
+    <div id="stats"><h2></h2></div>
+    <div id="embed"></div>
+  <div id="thumbs">
+      <ul></ul>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="vimeoCtrl.js"></script>
+  <script type="text/javascript">  
+
+    var folder = "img"; //TODO: change this to the path to your folder with the images.
+    $.ajax({
+        url: folder,
+        success: function(data) {
+            console.log(data)
+        }
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="densi.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+  <!-- <div style='padding:56.25% 0 0 0;position:relative;'><iframe src='https://vimeo.com/showcase/6770654/embed' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;'></iframe></div> -->
+  <!-- <header>Densi</header> -->
+  <!-- TODO 改成VIDEO LIST 管理然後控制撥放 -->
+  <div class="videoContent" id="embed">
+    <!-- <iframe src='https://vimeo.com/showcase/6770654/embed?autoplay=1' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;' allow="autoplay" id="video"></iframe> -->
+    <!-- <iframe src='https://player.vimeo.com/video/312696259?autoplay=1&autopause=0&api=1' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen allow="autoplay" id="video"></iframe> -->
+    <!-- <iframe src="https://player.vimeo.com/video/76979871?autoplay=1&loop=0&autopause=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+  </div>
+  <div class="newspaper">
+    <!-- <div class="colormatch">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div> -->
+    <ul class="postsList">
+    </ul>
+  </div>
+  <!-- <div class="qrcode">
+    <div class="img">qrcode</div>
+    <div class="text">掌握大小事，請掃qrcode</div>
+  </div> -->
+  <div class="notice">
+    先行測試版
+  </div>
+
+
+  <script src="jquery-2.2.4.min.js"></script>
+  <script src="player.js"></script>
+  <script src="vimeoCtrl.js"></script>
+  <script type="module" src="densi.js"></script>
+</body>
+</html>

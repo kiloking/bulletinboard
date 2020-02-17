@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新增消息</title>
+  <link rel="stylesheet" href="../node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="./adminMain.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  </nav>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-9 ">
+        <div class="field">
+          <div class="tagsExample"><div class="example"></div></div>
+        </div>
+        <div class="field">
+          <label class="label">分類名稱</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="xx組公告" id="title"  >
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">背景顏色</label>
+          <div class="color-picker"></div>
+
+        </div>
+        <div class="field">
+          <label class="label">文字顏色</label>
+          <div class="color-picker-fontcolor"></div>
+
+        </div>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" id="submit">新增</button>
+          </div>
+          <span id="requireFlash"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <script src="../ckeditor/ckeditor.js"></script>
+  <script src="adminMain.js"></script>
+  <script type="module" src="editcategory.js"></script>
+  <script src="piklor.js"></script>
+</body>
+</html>

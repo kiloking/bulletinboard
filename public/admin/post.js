@@ -1,12 +1,14 @@
+import {devcategoriesURL ,devpostsURL} from '../apiurl.js';
 $(function(){
   var $categories = $('#categories')
   var $title = $('#title')
-  var $content = $('#content')
+  var $content = $('textarea.content')
+  CKEDITOR.replace( 'content' );
   var $author = $('#author')
   var $submit = $('#submit') 
-  var devcategoriesURL = 'http://localhost:3001/api/categories'
-  var devpostsURL = 'http://localhost:3001/api/posts'
-  var prodURL = 'https://nameless-bastion-39488.herokuapp.com/api/users'
+  var $requireFlash = $('#requireFlash')
+  // var devcategoriesURL = 'http://192.168.1.137:3001/api/categories'
+  // var devpostsURL = 'http://192.168.1.137:3001/api/posts'
 /**
 如果你要造一條船，不要只曉得敲鑼打鼓，張羅人們去砍樹鋸木。
 你要先讓他們對航海充滿幻想。讓員工看到未來、看到願景，告訴他們你為什麼要這樣做，剩下的就讓他們自己去發揮。
@@ -31,13 +33,27 @@ $(function(){
   loadCategories()
 
   $submit.click(event =>{
-    console.log($categories.val())
-    console.log($title.val())
-    console.log($content.val())
-    console.log($author.val())
+    // console.log($categories.val())
+    if(!$title.val()) {
+      $requireFlash.html('標題是必填的')
+      return
+    }
+    var content = CKEDITOR.instances['content'].getData()
+    if(!content) {
+      $requireFlash.html('內文是必填的')
+      return
+    }
+    if(!$author.val()) {
+      $requireFlash.html('作者是必填的')
+      return
+    }
+
+    // console.log($content.val())
+    
+    // console.log($author.val())
     postForm({
       title:$title.val(),
-      content:$content.val(),
+      content:content,
       category:$categories.val(),
       author:$author.val(),
     })
@@ -61,6 +77,10 @@ $(function(){
         return response.json(); 
       }).then((jsonData) => {
         console.log(jsonData);
+        $title.val('')
+        CKEDITOR.instances['content'].setData('')
+        $author.val('')
+        $requireFlash.html('文章已發佈完成。')
       }).catch((err) => {
         console.log('錯誤:', err);
     })

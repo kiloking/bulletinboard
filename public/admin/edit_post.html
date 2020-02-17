@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>編輯消息</title>
+  <link rel="stylesheet" href="../node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  </nav>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-9 ">
+        <div class="field">
+          <label class="label">類別</label>
+          <div class="control">
+            <div class="select" >
+              <select name="categories" id="categories">
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">消息標題</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="主要標題" id="title"  >
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">內容 <div class="tag is-link is-light">上傳圖片請點 <img src="./img/imgur.png" alt="" width="20px"> 圖示。</div></label>
+         
+          <div class="control">
+            <textarea class="textarea" placeholder="訊息內容:50~120字" id="content" name="content" class="content"  ></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">作者</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="目前請先自行填入單位 ex:管理組" id="author"  >
+          </div>
+        </div>
+        
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" id="submit">想清楚了，送出</button>
+          </div>
+          <span id="requireFlash"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <script src="../ckeditor/ckeditor.js"></script>
+  <script src="adminMain.js"></script>
+  <script type="module" src="editpost.js"></script>
+</body>
+</html>

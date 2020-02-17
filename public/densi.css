@@ -1,0 +1,128 @@
+body{
+  font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
+  
+}
+body, html{
+  overflow: hidden;
+  background: #282c34;
+}
+/* *{
+  border:1px solid #000;
+  box-sizing: border-box;
+} */
+header{
+  width: 100%;
+  background: rgb(247, 82, 82);
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:5px 0px;
+  font-size: 1.2em;
+}
+.videoContent{
+
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.videoContent iframe,
+.videoContent object,
+.videoContent embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.newspaper{
+  width: 100%;
+}
+.postsList{
+  height: 100%;
+  background: #282c34;
+  width: 100%;
+}
+
+.postsList li{
+  background: #282c34;
+  color: #e7e7e7;
+  padding:30px 10px 30px 40px;
+  border-bottom:1px solid #fff;
+
+
+}
+.postsList li h4{
+  font-size: 2.5em;
+}
+.postsList li .item .info{
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  margin-top: 15px;
+}
+.postsList li .item .info div{
+  margin-right: 10px;
+}
+.postsList li .item .info div:first-child{
+  color:#98c379;
+}
+.colormatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top:10%;
+}
+.colormatch div{
+  width: 180px;
+  height: 80px;
+  background: #233237;
+  border:1px solid #ddd;
+}
+.colormatch div:first-child{
+  background: #96858F;
+}
+.colormatch div:nth-child(2){
+  background: #565656;
+}
+.qrcode{
+  position: absolute;
+  /* background: #fff; */
+  bottom:30%;
+  right:0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:10px
+}
+.qrcode .img{
+  width: 210px;
+  height: 210px;
+  background: #000;
+  border:8px solid #fff;
+}
+.qrcode .text{
+  margin-top: 5px;
+  font-size: 1.5em;
+  background: #fff;
+  padding:3px 8px;
+}
+.notice{
+  position:absolute;
+  bottom: 1%;
+  left:50%;
+  background: #000;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 30px;
+  font-size: 2em;
+  transform:translateX(-50%);
+}
